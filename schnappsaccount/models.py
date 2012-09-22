@@ -4,13 +4,13 @@ from django.db import models
 
 class Person(models.Model):
     name = models.CharField(max_length=128)
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, blank=True, null=True)
 
     def __unicode__(self):
         return self.name
 
 class Claim(models.Model):
-    person = models.ForeignKey(Person, blank=True, null=True)
+    person = models.ForeignKey(Person)
     reason = models.TextField(blank=True)
     debt = models.DecimalField(max_digits=10, decimal_places=2)
 
