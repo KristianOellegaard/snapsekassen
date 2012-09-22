@@ -1,0 +1,19 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>Person</th>
+                <th>Claims</th>
+            </tr>
+            {% for person in object_list %}
+            <tr>
+                <td>{{ person }}</td>
+                <td>{% for claim in person.claim_set.all %}{{ claim }}<br/>{% endfor %}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
