@@ -10,7 +10,7 @@ class Person(models.Model):
         return self.name
 
 class Claim(models.Model):
-    person = models.ForeignKey(Person)
+    person = models.ForeignKey(Person, blank=True, null=True)
     reason = models.TextField(blank=True)
     debt = models.DecimalField(max_digits=10, decimal_places=2)
 

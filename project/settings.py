@@ -124,6 +124,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
 
     'schnappsaccount',
+    'south',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -156,4 +157,4 @@ LOGGING = {
 }
 
 import dj_database_url
-DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
+DATABASES = {'default': dj_database_url.config(default='sqlite://test.db')}
