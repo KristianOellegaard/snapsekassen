@@ -12,15 +12,19 @@
                 <table>
                     <tr>
                         <th>Person</th>
+                        <th>Date</th>
                         <th>Claims</th>
         		        <th>Debt</th>
                     </tr>
                     {% for person in object_list %}
+                    {% with person.claim_set.all as claims %}
                     <tr>
                         <td>{{ person }}</td>
-                        <td>{% for claim in person.claim_set.all %}{{ claim }}<br/>{% endfor %}</td>
-                        <td>{% for claim in person.claim_set.all %}{{ claim.debt}}<br/>{% endfor %}</td>
+                        <td>{% for claim in claims %}{{ claim.date }}<br/>{% endfor %}</td>
+                        <td>{% for claim in claims %}{{ claim }}<br/>{% endfor %}</td>
+                        <td>{% for claim in claims %}{{ claim.debt}}<br/>{% endfor %}</td>
         	        </tr>
+                    {% endwith %}
                     {% endfor %}	
                 </table>
         	</div>
