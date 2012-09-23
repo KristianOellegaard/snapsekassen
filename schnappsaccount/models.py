@@ -13,6 +13,7 @@ class Claim(models.Model):
     person = models.ForeignKey(Person)
     reason = models.TextField(blank=True)
     debt = models.DecimalField(max_digits=10, decimal_places=2)
+    date = models.DateTimeField()
 
     def __unicode__(self):
         return self.reason
