@@ -1,19 +1,34 @@
 <html>
     <head>
-
+        <title>Snapsekassen</title>
+    	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}style.css">
     </head>
     <body>
-        <table>
-            <tr>
-                <th>Person</th>
-                <th>Claims</th>
-            </tr>
-            {% for person in object_list %}
-            <tr>
-                <td>{{ person }}</td>
-                <td>{% for claim in person.claim_set.all %}{{ claim }}<br/>{% endfor %}</td>
-            </tr>
-            {% endfor %}
-        </table>
+    	<div id="header">
+    		<h2>Snapsekassen</h2>
+    	</div>
+        <div id="wrapper">
+        	<div id="content">
+                <table>
+                    <tr>
+                        <th>Person</th>
+                        <th>Date</th>
+                        <th>Claims</th>
+        		        <th>Debt</th>
+                    </tr>
+                    {% for person in object_list %}
+                    {% with person.claim_set.all as claims %}
+                    <tr>
+                        <td>{{ person }}</td>
+                        <td>{% for claim in claims %}{{ claim.date }}<br/>{% endfor %}</td>
+                        <td>{% for claim in claims %}{{ claim }}<br/>{% endfor %}</td>
+                        <td>{% for claim in claims %}{{ claim.debt}}<br/>{% endfor %}</td>
+        	        </tr>
+                    {% endwith %}
+                    {% endfor %}	
+                </table>
+        	</div>
+            <p>Total amount in the box: </p>
+        </div>
     </body>
 </html>
