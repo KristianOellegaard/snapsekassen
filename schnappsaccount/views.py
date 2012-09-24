@@ -4,6 +4,6 @@ from django.db.models import Sum
 
 
 class PersonListView(ListView):
-    def get_context_data(self):
+    def get_context_data(self, *args, **kwargs):
         total_sum = Claim.objects.aggregate(Sum('debt'))
         return {'total_sum': total_sum}
