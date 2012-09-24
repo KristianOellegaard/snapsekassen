@@ -14,6 +14,8 @@ class Claim(models.Model):
     reason = models.TextField(blank=True)
     debt = models.DecimalField(max_digits=10, decimal_places=2)
     date = models.DateTimeField()
+    reported_by = models.ForeignKey(Person, related_name='claim_report_set',
+                                   blank=True, null=True)
 
     def __unicode__(self):
         return self.reason
