@@ -3,5 +3,5 @@ from schnappsaccount.models import Person
 from schnappsaccount.views import PersonListView
 
 urlpatterns = patterns('',
-    url(r'^$', PersonListView.as_view(queryset=Person.objects.all())),
+    url(r'^$', PersonListView.as_view()),
 )
