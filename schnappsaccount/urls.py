@@ -1,7 +1,7 @@
-from django.conf.urls import patterns, include, url
-from django.views.generic import ListView
+from django.conf.urls import patterns, url
 from schnappsaccount.models import Person
+from schnappsaccount.views import PersonListView
 
 urlpatterns = patterns('',
-    url(r'^$', ListView.as_view(queryset=Person.objects.all())),
+    url(r'^$', PersonListView.as_view(queryset=Person.objects.all())),
 )
