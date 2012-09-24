@@ -17,7 +17,7 @@
         <div id="wrapper">
         	<div id="content">
                 {% for person in object_list %}
-                <p id="person_{{ person }}">{{ person }}</p>
+                <p id="person_{{ person }}">{{ person }}<sup>{{ person.claim_set.count }}</sup></p>
                 {% endfor %}
         	</div>
             <div id="claim">
