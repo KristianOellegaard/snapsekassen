@@ -2,6 +2,13 @@
     <head>
         <title>Snapsekassen</title>
     	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}style.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+        <script>
+            function showClaim(id)
+            {
+                jQuery("claim_"+id).show("slow");
+            }
+        </script>
     </head>
     <body>
     	<div id="header">
@@ -9,26 +16,14 @@
     	</div>
         <div id="wrapper">
         	<div id="content">
-                <table>
-                    <tr>
-                        <th>Person</th>
-                        <th>Date</th>
-                        <th>Claims</th>
-        		        <th>Debt</th>
-                    </tr>
-                    {% for person in object_list %}
-                    {% with person.claim_set.all as claims %}
-                    <tr>
-                        <td>{{ person }}</td>
-                        <td>{% for claim in claims %}{{ claim.date }}<br/>{% endfor %}</td>
-                        <td>{% for claim in claims %}{{ claim }}<br/>{% endfor %}</td>
-                        <td>{% for claim in claims %}{{ claim.debt}}<br/>{% endfor %}</td>
-        	        </tr>
-                    {% endwith %}
-                    {% endfor %}	
-                </table>
+                {% for person in object_list %}
+                <p id="person_{{ person }}">{{ person }}</p>
+                {% endfor %}
         	</div>
-            <p>Total amount in the box: </p>
+            <div id="claim">
+
+            </div>
+            <p>Total amount in the box: {{ total_sum.debt__sum  }}</p>
         </div>
     </body>
 </html>

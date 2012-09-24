@@ -8,15 +8,27 @@
 }
 #content
 {
-	width: 30%;
+	width: 50%;
 	height: 50%;
 	position: relative;
 	top: 5%;
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 15px;
+	-moz-border-radius: 15px;
 	background-color: #CCFF99;
 	overflow: scroll;
+}
+
+#claim
+{
+	display: none;
+}
+
+table
+{
+	margin-left: auto;
+	margin-right: auto;
 }
 th
 {
@@ -30,6 +42,7 @@ td
 {
 	padding: 8px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-align:center;
 }
 p
 {
