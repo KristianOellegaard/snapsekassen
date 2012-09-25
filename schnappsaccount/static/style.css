@@ -35,7 +35,7 @@ th
 }
 tr
 {
-	text-align: center;
+	text-align: left;
 }
 td
 {
@@ -46,4 +46,8 @@ td
 p
 {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h2
+{
+	font-family: "Helvetica Neue", Helvetica, Verdana, sans-serif;	
 }
