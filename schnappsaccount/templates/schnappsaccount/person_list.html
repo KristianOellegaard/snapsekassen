@@ -18,9 +18,11 @@
         	<div id="content">
                 {% for person in object_list %}
                 <p id="person_{{ person }}">({{ person }})<sup>{{ person.claim_set.count }}</sup></p>
-                {% for claim in person.claim_set.all %}
-                  <p>{{ claim.reason }}</p>
-                {% endfor %}
+                <ol>
+                  {% for claim in person.claim_set.all %}
+                    <li>{{ claim.reason }}</li>
+                  {% endfor %}
+                </ol>
                 {% endfor %}
         	</div>
             <div id="claim">
