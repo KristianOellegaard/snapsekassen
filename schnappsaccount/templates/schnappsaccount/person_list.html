@@ -20,7 +20,7 @@
                 <p id="person_{{ person }}">({{ person }})<sup>{{ person.claim_set.count }}</sup></p>
                 <ol>
                   {% for claim in person.claim_set.all %}
-                    <li>{{ claim.reason }}</li>
+                  <li>{{ claim.reason }} <i>({{ claim.reported_by }})</i></li>
                   {% endfor %}
                 </ol>
                 {% endfor %}
