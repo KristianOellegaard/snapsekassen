@@ -1,53 +1,60 @@
-#header
-{
-	text-align: center;
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
 }
-#wrapper
-{
-	text-align: center;
+body {
+    background: url('bg.gif');
+    color: #ffe5c4;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.5);
 }
-#content
-{
-	width: 50%;
-	min-height: 50%;
-	margin-top: 100px;
-  margin-left: auto;
-	margin-right: auto;
-	border-radius: 15px;
-	-moz-border-radius: 15px;
-	background-color: #CCFF99;
-  overflow: auto;
+h1 {
+    font-weight: 900;
+    font-size: 900%;
+    text-transform: uppercase;
+    letter-spacing: -.1em;
+    margin: 0;
+    text-align: center;
+    text-shadow: 5px 5px 0 #b34e32;
 }
-
-#claim
-{
-	display: none;
+h2 {
+    color: #df4f24;
+    font-weight: 600;
 }
-
-table
-{
-	margin-left: auto;
-	margin-right: auto;
+#claims {
+    background-image: url('main-header.png'), url('main-pattern.png');
+    background-position: center top, 12px top;
+    background-repeat: no-repeat, repeat-y;
+    width: 625px;
+    min-height: 600px;
+    margin: -100px auto 0;
+    padding: 100px 30px 0;
 }
-th
-{
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+#wtf {
+    background: url('main-footer.png') 11px top no-repeat;
+    width: 685px;
+    height: 54px;
+    margin: -25px auto 0;
 }
-tr
-{
-	text-align: left;
+#claims article {
+    margin: 25px 50px;
 }
-td
-{
-	padding: 8px;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	text-align:center;
+#claims h2 {
+    color: #fff;
 }
-p
-{
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+#claims h2 span {
+    color: #fff;
+    background: #a63a1c;
+    padding: 0px 4px;
+    margin: 4px;
+    float: right;
 }
-h2
-{
-	font-family: "Helvetica Neue", Helvetica, Verdana, sans-serif;	
+#claims p {
+    padding: 3px 10px;
+}
+#claims p span {
+    color: #fff;
+    font-style: italic;
+    font-size: 85%;
 }
