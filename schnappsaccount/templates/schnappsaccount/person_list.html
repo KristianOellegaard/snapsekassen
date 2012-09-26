@@ -32,3 +32,31 @@
         </div>
     </body>
 </html>
+
+<!doctype html>
+<html>
+<head>
+    <title>Snapsekassen</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600,900&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <header id="header">
+        <h1>Snapsekassen</h1>
+    </header>
+
+    <section id="claims">
+        {% for person in object_list %}
+        <article id="person_{{ person }}">
+            <h2>{{ person }} <span>{{ person.claim_set.count }}</span></h2>
+            {% for claim in person.claim_set.all %}
+            <p>{{ claim.reason }} <span>&mdash; {{ claim.reported_by }}</span></p>
+            {% endfor %}
+        </article>
+        {% endfor %}
+
+    </section>
+
+</body>
+</html>
